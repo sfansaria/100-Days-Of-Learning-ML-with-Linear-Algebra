@@ -17,4 +17,7 @@ raw_speech_audio = np.array([0.15, -0.30, 0.45, -0.10, 0.05])
 print("--- RAW AUDIO INPUT ---")
 print(f"Speech Vector: {raw_speech_audio}\n")
 
-voulme_gain = 
+voulme_gain = 2.5
+amplified_audio = voulme_gain * raw_speech_audio
+print (f"Amplified speech: {amplified_audio}")
+
