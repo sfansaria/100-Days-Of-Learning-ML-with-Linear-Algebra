@@ -3,6 +3,7 @@
    Vector multiplication is the mathematical tool that transforms raw audio into text, 
    filters out the background noise, and enhances the quality of the sound and recognizes the voice.
    '''
+
 #Scalar multiplication: Scaling the amplitude of the audio signal by multiplying it with a scalar value.
 
 import numpy as np
@@ -34,7 +35,8 @@ print("Application: Removes static background noise or applies acoustic filters.
 
 #Vector Dot Product: 
 #When the speech audio vector aligns perfectly with the target keyword vector,
-# the dot product will be maximized, indicating a strong match. A high dot product means there is high acoustic similarity between the two vectors.
+# the dot product will be maximized, indicating a strong match. 
+# A high dot product means there is high acoustic similarity between the two vectors.
 #on the other hand if the vectors are orthogonal (perpendicular), 
 #the dot product will be zero, indicating the sound is unrelated to the target keyword and the word error rate will be high.
 '''
@@ -54,9 +56,11 @@ Every valley lines up with a valley (Negative × Negative = Big Positive).
 The Intuition: All the multiplications become positive and flood together into a massive sum. 
 The dot product spikes like an alarm, telling the AI: "The pattern matches! Wake up!"
 '''
+
 #DOT PRODUCT: Wake-Word Detection ("Acoustic Alignment")
 #The AI is listening for a specific phonetic target vector (e.g., the syllable "Ah")
-wake_word_target = np.array([0.35, -0.75, 0.0, -0.25, 0.10])
+
+wake_word_target = np.array([0.375, -0.75, 0.0, -0.25, 0.125])
 
 # Compute similarity via the dot product
 similarity_score = np.dot(cleaned_speech, wake_word_target)
