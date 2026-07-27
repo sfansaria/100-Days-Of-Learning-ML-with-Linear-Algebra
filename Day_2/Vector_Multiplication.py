@@ -22,6 +22,7 @@ print (f"Amplified speech: {amplified_audio}")
 
 # Imagine the 3rd element in our vector is a sudden microphone hiss or noise spike.
 # We apply a "mask vector" to silence that specific component.
+
 noise_gate_mask = np.array([1.0, 1.0, 0.0, 1.0, 1.0])  # Zero out the 3rd index
 cleaned_speech = amplified_audio * noise_gate_mask
 
