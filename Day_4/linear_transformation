@@ -1,0 +1,23 @@
+#A Vector - It is a data point for example in terms of speech, it is an audio features of one spoken word
+#A Matrix - It is an entire dataset for example in terms of speech , it is the audio features of hundreds of spoken words
+#stacked on top of each other.
+
+'''
+Now lets understand linear transformation in from speech machine learning perspective,
+a linear transformation is a mathematical operation that reshapes, filters or compresses 
+audio data to make it easier for an AI to understand. When the udio is recorded, it is highly complex, noisy and raw. A linear transformation takes these raw speech features and transforms them into a cleaner, more organized structure without bending or destroying the underlying relationships in the data.
+
+From the speech context: Before transforming speech, the AI chops your continuous voice recording into short, overlapping slices called frames (usually 25 milliseconds long).
+
+Each frame is converted into a vector of numbers representing different acoustic frequencies.
+When you stack these frame vectors side-by-side, they form a matrix called spectogram (a visual map of the voice).
+
+Linear Transformations are used at almost every stage of speech processing.
+
+1. Feature Extraction (The Mel-Filterbank):
+
+Human ears do not hear pitch shifts linearly; but are much better at detceting small changes in low frequencies
+than in high frequencies.
+A raw audio vector goes through a linear transformation matrix called a Mel-filterbank
+
+'''
