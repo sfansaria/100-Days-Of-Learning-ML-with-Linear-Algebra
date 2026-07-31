@@ -30,7 +30,7 @@ No day is meant to be a polished textbook chapter. It's meant to be honest: what
 | 2 | Vector Multiplication (Dot Product) | Measuring similarity between speaker embeddings |
 | 3 | Cross Product | Building geometric intuition before moving into higher-dimensional spaces |
 | 4 | Linear Transformations | How matrices reshape feature spaces — the backbone of every neural network layer |
-
+| 5 | System of Linear Equations and Matrix Inverse | How to reconstruct clean matrix without distortions  |
 More days are being added as the challenge continues — expect matrix decompositions, eigenvectors, projections, and eventually a straight line from "what is a vector" to "how does a speaker embedding actually work."
 
 ## Who this is for
