@@ -34,8 +34,8 @@ No day is meant to be a polished textbook chapter. It's meant to be honest: what
 | 6   | Vector Spaces, Subspace, Basis, Change of Basis | How to apply change of basis with the help of Fourier Transform |
 | 7   | Orthogonality and Projections | How the mathematical concept of Orthogonality shows the relation between audio features and how clean data is extracted by projecting the distorted voice from a higher dimension to lower dimension |
 | 8   | Eigen Vector and Eigen Values | How important audio features are extracted from a multidimensional dataset using PCA and covariance matrix |
-
-More days are being added as the challenge continues — expect matrix decompositions, eigenvectors, projections, and eventually a straight line from "what is a vector" to "how does a speaker embedding actually work."
+| 9   | Partial Derivatives and Gradient | How model total error changes with a tweak in one specific weight and collecting all these individual partial derivatives into a single vector gives the gradient |
+| 10   | Tensor                          | Representing batch_size, audio frames and feature vectors (A 3D block of numbers with different audio spectrograms packed ether to train a model simultaneously |
 
 ## Who this is for
 
