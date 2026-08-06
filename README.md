@@ -38,7 +38,6 @@ No day is meant to be a polished textbook chapter. It's meant to be honest: what
 | 10   | Tensor                          | Representing batch_size, audio frames and feature vectors (A 3D block of numbers with different audio spectrograms packed ether to train a model simultaneously |
 | 11   | Chain Rule                  |  In deep learning neural networks would be completely blind, they could calculate mistakes at the output layer but they would have no mathematical way to pass that knowledge back to update the lower tensor features without Chain Rule. |
 
-'''
 ## Who this is for
 
 - Anyone learning ML who wants the math to feel *motivated* rather than memorized.
