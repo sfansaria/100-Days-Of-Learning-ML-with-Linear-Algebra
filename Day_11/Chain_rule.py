@@ -29,6 +29,7 @@ PyTorch notes down the  derivative formula required to back up through that spec
 '''
 import torch
 
+#Forward
 #layer1: simulated raw audio feature tensor (loudness level)
 #lets see how tuning layer 1's weight impacts the final text error
 audio_input = torch.tensor([1.5])
@@ -47,17 +48,31 @@ layer2_output.retain_grad()
 target = torch.tensor([10.0])
 loss = (layer2_output - target)**2
 
+#loss.backward() calculates the math from end to the start 
 #calculus backward pass
 #running backward() triggers the chain rule across the computational graph
 loss.backward()
 
-print("Chain Rule Components")
+print("Chain Rule Components  - Backwards")
 
 # Link 1: dLoss / dLayer2 (Derivative of power function)
-print(f"Link 1 (Loss to Layer 2 gradient): {layer2_output.grad.item():.2f}")
+#Link 1 calculates how the loss changes relative to Layer 2 (-2.0)
+print(f"Link 1 (Loss to Layer 2 gradient) (thats is how loss changes relative to layer 2): {layer2_output.grad.item():.2f}")
 
 # Link 2: dLoss / dLayer1 (Calculated as: Link 1 * Derivative of squaring step)
-print(f"Link 2 (Loss down to Layer 1):      {layer1_output.grad.item():.2f}")
+#The model then multiplies that by the derivative of the squaring function (2 × 3.0 = 6.0)
+# which gives Link 2 (-2.0 × 6.0 = -12.0).
+print(f"Link 2 (Loss down to Layer 1)(loss):      {layer1_output.grad.item():.2f}")
 
 # Link 3: dLoss / dWeight1 (Calculated as: Link 2 * Raw audio input)
+#Finally, it multiplies that result by the raw audio input (1.5) 
+#to get the final gradient for our starting weight (-12.0 × 1.5 = -18.0).
 print(f"Final Weight 1 Gradient: {w_layer1.grad.item():.2f}")
+
+
+'''
+Why chain rule is important is because without chain rule, deep learning 
+neural networks would be completely blind, they could caluculate mistakes
+at the output layer but they would have no mathematical way to pass that 
+knowledge back to update the lower tensor features.
+'''
